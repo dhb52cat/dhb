@@ -1,0 +1,6 @@
+eclipse market搜jetty，下载run-jetty-run 
+
+解决静态文件锁定问题
+找到jetty-webxxxx.jar 修改org/mortbay/jetty/webapp/webdefault.xml这个文件。
+把useFileMappedBuffer改成false
+之后要重启eclipse
