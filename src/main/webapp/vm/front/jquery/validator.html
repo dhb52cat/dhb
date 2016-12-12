@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+</script>
+<script type="text/javascript" src="../../../resources/js/jquery.min.js"></script>
+<script type="text/javascript" src="../../../resources/js/plugins/validate/jquery.validate.min.js"></script>
+<!-- --><script type="text/javascript" src="../../../resources/js/plugins/validate/messages_zh.min.js"></script> 
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#form").validate({
+			rules: {
+				name: "required"
+					
+				
+			},
+			messages: {
+				name: "Please enter your firstname"
+				
+			}
+		});});
+</script>
+<form id="form" action="">
+	
+	<fieldset>
+			<legend>Please provide your name, email address (won't be published) and a comment</legend>
+			<p>
+				<label for="cname">Name (required, at least 2 characters)</label>
+				<input id="cname" name="name"  type="text" required>
+			</p>
+			<p>
+				<label for="cemail">E-Mail (required)</label>
+				<input id="cemail" type="email" name="email" required="required">
+			</p>
+			<p>
+				<label for="curl">URL (optional)</label>
+				<input id="curl"  type="url" name="url">
+			</p>
+			<p>
+				<label for="ccomment">Your comment (required)</label>
+				<textarea id="ccomment" name="comment" required></textarea>
+			</p>
+			<p>
+			<label for="gender_male">
+					<input type="radio" id="gender_male" value="m" name="gender" required>Male
+				</label>
+				<input type="radio" name="gender" id="female" value="f"/>
+				
+			</p>
+			<p><fieldset>
+				<legend>Spam</legend>
+				<label for="spam_email">
+					<input type="checkbox" class="checkbox" id="spam_email" value="email" name="spam[]" required minlength="2">Spam via E-Mail
+				</label>
+				<label for="spam_phone">
+					<input type="checkbox" class="checkbox" id="spam_phone" value="phone" name="spam[]">Spam via Phone
+				</label>
+				<label for="spam_mail">
+					<input type="checkbox" class="checkbox" id="spam_mail" value="mail" name="spam[]">Spam via Mail
+				</label>
+				<label for="spam[]" class="error">Please select at least two types of spam.</label>
+			</fieldset></p>
+			<p>
+				<input class="submit" type="submit" value="Submit">
+			</p>
+		</fieldset>
+		<p><select id="jungle" name="jungle" title="Please select something!" required multiple="multiple">
+				<option value=""></option>
+				<option value="1">Buga</option>
+				<option value="2">Baga</option>
+				<option value="3">Oi</option>
+			</select></p>
+	
+</form>
+</body>
+</html>
