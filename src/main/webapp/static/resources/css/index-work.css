@@ -1,0 +1,183 @@
+.content-top {
+	/* float: left; */
+	width: 100%;
+	height: 30px;
+	border-bottom: 1px solid #cccccc;
+	background-color: #EDF5FC;
+}
+
+.content-top span {
+	line-height: 30px;
+	margin-left: 1%;
+	color: #666666;
+}
+
+.middle {
+	font-family: "微软雅黑";
+	/* border: 1px solid #ccc; */
+	margin-bottom: 12px;
+	margin-right: 12px;
+}
+
+.middle .achievements {
+	/* background-color:#fff; */
+	
+}
+
+.middle #echarts-line-chart {
+	background-color: #fff;
+	border: 1px solid #BBC6CD;
+	background-color: #fff !important;
+}
+
+.middle .achies {
+	padding-right: 12px;
+}
+.icon-res{
+	height:40px;
+	margin-top:20px;
+}
+.emails-res{
+	text-align:center;
+	display:block;
+	width:100%;
+	margin:20px 0;
+}
+.middle-mid1-lef {
+	border: 1px solid #cccccc;
+	background-color: #fff;
+	margin-right: 12px;
+	margin-top: 12px;
+}
+
+.middle-mid1-lef .pf {
+	width: 14%;
+	height: 40px;
+	color: #333333;
+	line-height: 40px;
+	margin-left: 1%;
+	margin-bottom: 0;
+	border-bottom: 2px solid #ff6600;
+}
+
+.middle-mid1-lef ul {
+	-webkit-padding-start: 0px;
+	overflow: hidden;
+	margin-bottom: 0px;
+}
+
+.middle-mid1-lef ul li {
+	width: 33.3%;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	margin-top: 15px;
+	height: 72px;
+}
+
+.middle-mid1-lef ul li .money {
+	color: #ff6600;
+	font-size: 28px;
+}
+
+.middle-mid1-lef ul li .business {
+	color: #333333;
+	margin-left: 20%;
+	text-align: left;
+}
+
+.middle-mid1-rig {
+	border: 1px solid #cccccc;
+	margin-top: 12px;
+	background-color: #fff;
+}
+
+.middle-mid1-rig .Deal {
+	margin-top: 15px;
+    height: 72px;
+    position: relative;
+}
+.middle-mid1-rig .Deal .business{
+    bottom: 10px;
+    position: absolute;
+    right: 5px;	
+}
+.middle-mid1-rig-top {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #cccccc;
+}
+
+.middle-mid1-rig span:nth-of-type(1) {
+	font-size: 60px;
+	line-height: 70px;
+	color: #ff3366;
+	margin-left: 16%;
+}
+
+.middle-mid1-rig span:nth-of-type(2) {
+	color: #3366ff;
+	margin-left: 4%;
+}
+
+.middle-mid2 {
+	margin-top: 12px;
+	border: 1px solid #cccccc;
+	background-color: #fff;
+}
+
+.middle-mid2-top {
+	width: 100%;
+	height: 40px;
+	float: left;
+	border-bottom: 1px solid #cccccc;
+}
+
+.middle-mid2-top span {
+	float: right;
+	margin-right: 2%;
+}
+
+.middle-mid2 .add-home {
+	width: 100%;
+	overflow: hidden;
+	-webkit-padding-start: 0px;
+	margin-bottom: 0px;
+}
+
+.middle-mid2 .add-home li {
+	width: 20%;
+	float: left;
+	text-align: center;
+	padding: 0px 8px;;
+	padding-top: 18px;
+	border-radius: 5px;
+	color: #fff;
+}
+
+.middle-bottom {
+	border: 1px solid #cccccc;
+	margin-top: 12px;
+	background-color: #fff;
+}
+ul li {
+	list-style: none;
+}
+
+.ibox-title {
+	border-bottom: 1px solid #ccc;
+	border-top: none;
+}
+
+.list {
+	-webkit-padding-start: 0px;
+}
+
+.list li {
+	line-height: 30px;
+}
+
+.list a {
+	color: #000;
+	text-decoration: underline;
+}
