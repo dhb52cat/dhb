@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+<!-- 全局js -->
+<script type="text/javascript" src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript" src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript" src="/base/static/resources/js/plugins/layer/layer.js"></script>
+
+<!-- 局部的 -->
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
+<script type="text/javascript" src="/base/resources/js/utils.js"></script>
+<script type="text/javascript" src="/base/resources/js/basic.js"></script>
+<!-- 无需引入的 -->
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/codemirror/codemirror.css">
+<script src="/base/static/resources/js/plugins/codemirror/codemirror.js"></script>
+<script src="/base/static/resources/js/plugins/codemirror/mode/javascript/javascript.js"></script>
+<style>
+li {
+	line-height: 24px;
+}
+</style>
+<script type="text/javascript">
+	var basePath = '/base';
+</script>
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+
+
+
+
+<div class="ibox float-e-margins">
+	<!-- 示例列表begin -->
+	<div class="col-sm-3">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>复选框ajax调用示例列表</h5>
+			</div>
+			<div class="ibox-content">
+				<ul>
+					<li><a id="unChecked" href="javascript:void(0);">未选中的示例</a></li>
+					<li><a id="checked" href="javascript:void(0);">已选中的示例</a></li>
+					<li><a id="checkedHasAll" href="javascript:void(0);">包含“所有”的示例</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 示例列表end -->
+	
+	<!-- 未选中的示例begin -->
+	<div id="ep_unchecked" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>未选中的复选框示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">供暖方式</label>
+						<div id="J_heatingMode" class="col-sm-10">
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					dimContainer.buildDimCheckBox($("#J_heatingMode"), "heatingMode", "heatingMode", "");
+				</script>
+
+<h4>示例代码：</h4>		
+<textarea id="area_unchecked">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">供暖方式</label>
+		<div id="J_heatingMode" class="col-sm-10"></div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		dimContainer.buildDimCheckBox($("#J_heatingMode"), "heatingMode", "heatingMode", "");
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- 未选中的示例end -->
+	
+	<!-- 已选中的示例begin -->
+	<div id="ep_checked" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>已选中的复选框示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">供水方式</label>
+						<div id="J_waterMode" class="col-sm-10"></div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					dimContainer.buildDimCheckBox($("#J_waterMode"), "waterMode", "waterMode", "1,3");
+				</script>
+	
+<h4>示例代码：</h4>			
+<textarea id="area_checked">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">供水方式</label>
+		<div id="J_waterMode" class="col-sm-10"></div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		dimContainer.buildDimCheckBox($("#J_waterMode"), "waterMode", "waterMode", "1,3");
+	</script>
+</textarea>
+			</div>
+			
+		</div>
+	</div>
+	<!-- 已选中的示例end -->
+	
+	<!-- 包含“所有”的示例begin -->
+	<div id="ep_checkedHasAll" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>包含“所有”的复选框示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">供气方式</label>
+						<div id="J_gasMode" class="col-sm-10"></div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					dimContainer.buildDimCheckBoxHasAll($("#J_gasMode"), "gasMode", "gasMode", "1,2,3", "所有");
+				</script>
+
+<h4>示例代码：</h4>				
+<textarea id="area_checkedHasAll">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">供暖方式</label>
+		<div id="J_gasMode" class="col-sm-10"></div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		dimContainer.buildDimCheckBoxHasAll($("#J_gasMode"), "gasMode", "gasMode", "1,2,3", "所有");
+	</script>
+</textarea>
+			</div>
+			
+		</div>
+	</div>
+	<!-- 包含“所有”的示例end -->
+</div>
+<!-- CodeMirror -->
+<script type="text/javascript">
+	$(document).ready(
+		function() {
+			edito1 = CodeMirror.fromTextArea(document.getElementById("area_unchecked"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor2 = CodeMirror.fromTextArea(document.getElementById("area_checked"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor3 = CodeMirror.fromTextArea(document.getElementById("area_checkedHasAll"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			$("#unChecked").click();
+		});
+	
+	$("#unChecked").click(function(){
+		$("#ep_unchecked").show();
+		$("#ep_checked").hide();
+		$("#ep_checkedHasAll").hide();
+	});
+	
+	$("#checked").click(function(){
+		$("#ep_checked").show();
+		$("#ep_unchecked").hide();
+		$("#ep_checkedHasAll").hide();
+	});
+	
+	$("#checkedHasAll").click(function(){
+		$("#ep_checkedHasAll").show();
+		$("#ep_checked").hide();
+		$("#ep_unchecked").hide();
+	});
+</script>
+</div>
+</body>
+</html>
+
+

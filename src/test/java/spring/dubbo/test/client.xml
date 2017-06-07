@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd    
+									http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<!-- 提供方应用信息，用于计算依赖关系 -->
+	<dubbo:application name="cbs-base-service-test" />
+    <!-- 使用zookeeper -->
+    <dubbo:registry id="registry" protocol="zookeeper" address="127.0.0.1:2181" check="false" /> 
+    <!-- 用dubbo协议在20881端口暴露服务 -->
+    <dubbo:protocol name="dubbo" server="netty" serialization="hessian2" />
+	<!-- 消费者 -->
+    <dubbo:consumer timeout="6000" registry="registry" />
+    
+	<!-- 消费者 -->
+	<dubbo:reference id="apiMenuService" interface="com.wiwj.cbs.base.api.ApiMenuService" version="1.0.0" retries="0" />
+	<dubbo:reference id="apiPrivilegeService" interface="com.wiwj.cbs.base.api.ApiPrivilegeService" version="1.0.0" retries="0" />
+	<dubbo:reference id="apiRoleService" interface="com.wiwj.cbs.base.api.ApiRoleService" version="1.0.0" retries="0" />
+	<dubbo:reference id="apiPostService" interface="com.wiwj.cbs.base.api.ApiPostService" version="1.0.0" retries="0" />
+	<dubbo:reference id="apiUserService" interface="com.wiwj.cbs.base.api.ApiUserService" version="1.0.0" retries="0" />
+	<dubbo:reference id="apiConfigService" interface="com.wiwj.cbs.base.api.ApiConfigService" version="1.0.0" retries="0" />
+	<dubbo:reference id="apiDepartmentService" interface="com.wiwj.cbs.base.api.ApiDepartmentService" version="1.0.0" retries="0" />
+	
+</beans>

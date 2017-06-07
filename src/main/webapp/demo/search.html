@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+<!-- 全局js -->
+<script type="text/javascript" src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript" src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript" src="/base/static/resources/js/plugins/layer/layer.js"></script>
+
+<!-- 局部的 -->
+<script type="text/javascript" src="/base/static/resources/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+<script type="text/javascript" src="/base/resources/js/utils.js"></script>
+<script type="text/javascript" src="/base/resources/js/basic.js"></script>
+<!-- 无需引入的 -->
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/codemirror/codemirror.css">
+<script src="/base/static/resources/js/plugins/codemirror/codemirror.js"></script>
+<script src="/base/static/resources/js/plugins/codemirror/mode/javascript/javascript.js"></script>
+<style>
+li {
+	line-height: 24px;
+}
+</style>
+<script type="text/javascript">
+	var basePath = '/base';
+</script>
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+
+<div class="ibox float-e-margins">
+	<!-- 示例列表begin -->
+	<div class="col-sm-3">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>搜索自动补全示例列表</h5>
+			</div>
+			<div class="ibox-content">
+				<ul>
+					<!-- <li><a id="community" href="javascript:void(0);">意向小区</a></li> -->
+					<li><a id="agent" href="javascript:void(0);">公司经纪人</a></li>
+					<li><a id="shop" href="javascript:void(0);">公司实体店</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 示例列表end -->
+	
+	<!-- “意向小区”示例代码 begin -->
+	<div id="ep_community" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>“意向小区”示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">意向小区（不显示搜索按钮）</label>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control" id="J_community" placeholder="请输入关键词">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-search search-caret"></span>
+									</button>
+									<ul class="dropdown-menu dropdown-menu-right" role="menu">
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-3 control-label">意向小区（显示搜索按钮）</label>
+						<div class="col-sm-6">
+							<div class="input-group">
+                                <input type="text" class="form-control" id="J_community_data">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-search search-caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    </ul>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					searchContainer.searchCommunity($("#J_community"), false);
+					searchContainer.searchCommunity($("#J_community_data"), true);
+				</script>
+
+
+<h4>示例代码：</h4>
+<textarea id="area_community">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<div class="form-group">
+		<label class="col-sm-3 control-label">意向小区（不显示搜索按钮）</label>
+		<div class="col-sm-6">
+			<div class="input-group">
+				<input type="text" class="form-control" id="J_community" placeholder="请输入关键词">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-3 control-label">意向小区（显示搜索按钮）</label>
+		<div class="col-sm-6">
+			<div class="input-group">
+				<input type="text" class="form-control" id="J_community_data">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		// 意向小区（不显示搜索按钮）
+		searchContainer.searchCommunity($("#J_community"), false);
+		// 意向小区（显示搜索按钮）
+		searchContainer.searchCommunity($("#J_community_data"), true);
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- “意向小区”示例代码 end -->
+	
+	<!-- “公司经纪人”示例代码 begin -->
+	<div id="ep_agent" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>“公司经纪人”示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">公司经纪人（不显示搜索按钮）</label>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control" id="J_agent" placeholder="请输入关键词">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-search search-caret"></span>
+									</button>
+									<ul class="dropdown-menu dropdown-menu-right" role="menu">
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-3 control-label">公司经纪人（显示搜索按钮）</label>
+						<div class="col-sm-6">
+							<div class="input-group">
+                                <input type="text" class="form-control" id="J_agent_data">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-search search-caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    </ul>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					searchContainer.searchUserListByComp($("#J_agent"), false);
+					searchContainer.searchUserListByComp($("#J_agent_data"), true);
+				</script>
+
+
+<h4>示例代码：</h4>
+<textarea id="area_agent">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<div class="form-group">
+		<label class="col-sm-3 control-label">公司经纪人（不显示搜索按钮）</label>
+		<div class="col-sm-6">
+			<div class="input-group">
+				<input type="text" class="form-control" id="J_agent" placeholder="请输入关键词">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-3 control-label">公司经纪人（显示搜索按钮）</label>
+		<div class="col-sm-6">
+			<div class="input-group">
+				<input type="text" class="form-control" id="J_agent_data">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		// 公司经纪人（不显示搜索按钮）
+		searchContainer.searchUserListByComp($("#J_agent"), false);
+		// 公司经纪人（显示搜索按钮）
+		searchContainer.searchUserListByComp($("#J_agent_data"), true);
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- “公司经纪人”示例代码 end -->
+	
+	<!-- “公司实体店”示例代码 begin -->
+	<div id="ep_shop" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>“公司实体店”示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-3 control-label">公司实体店（不显示搜索按钮）</label>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<input type="text" class="form-control" id="J_shop" placeholder="请输入关键词">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-search search-caret"></span>
+									</button>
+									<ul class="dropdown-menu dropdown-menu-right" role="menu">
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-3 control-label">公司实体店（显示搜索按钮）</label>
+						<div class="col-sm-6">
+							<div class="input-group">
+                                <input type="text" class="form-control" id="J_shop_data">
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-search search-caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                    </ul>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					searchContainer.searchUserListByComp($("#J_shop"), false);
+					searchContainer.searchUserListByComp($("#J_shop_data"), true);
+				</script>
+
+
+<h4>示例代码：</h4>
+<textarea id="area_shop">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<div class="form-group">
+		<label class="col-sm-3 control-label">公司实体店（不显示搜索按钮）</label>
+		<div class="col-sm-6">
+			<div class="input-group">
+				<input type="text" class="form-control" id="J_shop" placeholder="请输入关键词">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-3 control-label">公司实体店（显示搜索按钮）</label>
+		<div class="col-sm-6">
+			<div class="input-group">
+				<input type="text" class="form-control" id="J_shop_data">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/suggest/bootstrap-suggest.min.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		// 公司实体店（不显示搜索按钮）
+		searchContainer.searchUserListByComp($("#J_agent"), false);
+		// 公司实体店（显示搜索按钮）
+		searchContainer.searchUserListByComp($("#J_agent_data"), true);
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- “公司实体店”示例代码 end -->
+	
+</div>
+
+<!-- CodeMirror -->
+<script type="text/javascript">
+	$(document).ready(
+		function() {
+			editor1 = CodeMirror.fromTextArea(document.getElementById("area_community"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor2 = CodeMirror.fromTextArea(document.getElementById("area_agent"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor3 = CodeMirror.fromTextArea(document.getElementById("area_shop"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			$("#agent").click();
+	});
+	
+	$("#community").click(function(){
+		$("#ep_community").show();
+		$("#ep_agent").hide();
+		$("#ep_shop").hide();
+	});
+	
+	$("#agent").click(function(){
+		$("#ep_agent").show();
+		$("#ep_community").hide();
+		$("#ep_shop").hide();
+	});
+	
+	$("#shop").click(function(){
+		$("#ep_shop").show();
+		$("#ep_agent").hide();
+		$("#ep_community").hide();
+	});
+</script>

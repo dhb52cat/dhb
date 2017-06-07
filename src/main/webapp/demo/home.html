@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>主页</title>
+	<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+	<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+	<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+	<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+	<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+	<script src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+	<script src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+	<script src="/base/static/resources/js/plugins/echarts/echarts.min.js"></script>
+	<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+	<script src="/base/static/resources/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+</head>
+<style>
+	*{font-family:"微软雅黑";}
+	ul li{list-style: none;}
+	.ibox-title{border-bottom: 1px solid #ccc;border-top:none;}
+	.list{-webkit-padding-start: 0px;}
+	.list li{line-height: 30px;}
+	.list a{color:#000;text-decoration:underline;}
+</style>
+	<body class="wrapper wrapper-content">
+		<div class="ibox">
+			<div class="row m-b-sm">
+				<span><i class="glyphicon glyphicon-home"></i>&nbsp;主页></span><span>我的工作台</span>
+			</div>
+			<div class="row">
+			    <div class="col-sm-8">
+			        <div style="border: 1px solid #ccc;margin-right: 10px;margin-bottom: 10px;">
+			            <div class="ibox-title">
+			                <h5>我的待办</h5>
+			            </div>
+			            <div class="ibox-content">
+			                <div class="row">
+			                    <div class="col-sm-4" >
+			                        <div id="echarts-line-chart" class="echarts" style="height:160px;width:400px;"></div>
+			                    </div>
+			                    <div class="col-sm-4">
+			                        <ul class="list m-l-xl">
+			                            <li><span class="pull-right">123件</span>业务处理</li>
+			                            <li><span class="pull-right">78件</span>制定交易计划</li>
+			                            <li><span class="pull-right">28件</span>确定贷款银行</li>
+			                            <li><span class="pull-right">480件</span>通知房款</li>
+			                            <li><span class="pull-right">25件</span>预约面签</li>
+			                        </ul>
+			                    </div>
+			                    <div class="col-sm-3 m-l-xl">
+			                        <ul class="list">
+			                            <li><span class="pull-right">123件</span>业务处理</li>
+			                            <li><span class="pull-right">78件</span>制定交易计划</li>
+			                            <li><span class="pull-right">28件</span>确定贷款银行</li>
+			                            <li><span class="pull-right">480件</span>通知房款</li>
+			                            <li><span class="pull-right">25件</span>预约面签</li>
+			                        </ul>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			    <div class="col-sm-4">
+			        <div style="border: 1px solid #ccc;margin-bottom: 10px;">
+			            <div class="ibox-title">
+			                <a class="label pull-right">更多>></a>
+			                <h5>工作日历</h5>
+			                <span class="label label-primary">2017-01-20</span>
+			            </div>
+			            <div class="ibox-content">
+			                <div class="row">
+			                    <div class="col-sm-12">
+			                        <ul class="list">
+			                            <li><button type="button" class="btn btn-success btn-xs">10:33</button><a class="m-l">处理BJM001批贷</a></span></li>
+			                            <li><button type="button" class="btn btn-primary btn-xs">10:33</button><a class="m-l">处理BJM001批贷</a></span></li>
+			                            <li><button type="button" class="btn btn-danger btn-xs">10:33</button><a class="m-l">处理BJM001批贷</a></span></li>
+			                            <li><button type="button" class="btn btn-warning btn-xs">10:33</button><span><a class="m-l">处理BJM001批贷</a></span></li>
+			                            <li><button type="button" class="btn btn-info btn-xs">10:33</button><a class="m-l">处理BJM001批贷</a></span></li>
+			                        </ul>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<div style="border: 1px solid #ccc;border-bottom: none;margin-bottom: 10px">
+						<div class="ibox-title m-b-sm ">
+			                <a class="label pull-right">更多>></a>
+			                <h5>我的在途订单</h5>
+			            </div>
+						<div class="table-responsive">
+                           <table class="table table-striped bor-no" id="dataTable">
+                               <thead>
+	                                <tr>
+	                                  	<th data-field="info">序号</th>
+										<th  data-field="infotype">签单编号</th>
+										<th data-field="name">客户</th>
+										<th data-field="enterdate">业主</th>
+										<th data-field="ispass">交易类型</th>
+										<th data-field="passdate">贷款银行</th>
+										<th data-field="assess">评估值(万)</th>
+										<th data-field="opt">状态</th>
+	                                </tr>
+                               </thead>
+                           </table>
+                       </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+			    <div class="col-sm-6">
+			        <div style="border: 1px solid #ccc;margin-right: 10px;margin-bottom: 10px;overflow: hidden;">
+			            <div class="ibox-title">
+			            	<a class="label pull-right">更多>></a>
+			                <h5>通知列表</h5>
+			            </div>
+			            <div class="ibox-content">
+			                <div class="row">
+			                    
+			                        <ul class="list">
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a>&nbsp;&nbsp;<button type="button" class="btn btn-danger btn-xs">置顶</button></li>
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                        </ul>
+			                   
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			    <div class="col-sm-6">
+			        <div style="border: 1px solid #ccc;">
+			            <div class="ibox-title">
+			                <a class="label pull-right">更多>></a>
+			                <h5>交易知识库</h5>
+			            </div>
+			            <div class="ibox-content">
+			                <div class="row">
+			                    <div class="col-sm-12">
+			                        <ul class="list">
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                            <li><span class="pull-right">2-16-12-20</span><a>国家税务局关于个人住房关于个人住房</a></li>
+			                        </ul>
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
+		</div>
+<script type="text/javascript">
+	$(function() {
+	var tableOptBtn = "<button type=\"button\" data-opt=\"edit\" class=\"btn  btn-danger btn-xs mt-3\" data-node=\"#node#\">紧急</button>&nbsp;&nbsp;"
+	var tableBtn = "<button type=\"button\" data-opt=\"edit\" class=\"btn  btn-success btn-xs mt-3\" data-node=\"#node#\">正常</button>&nbsp;&nbsp;"
+		var tableData = [{
+			"info" : "1",
+			"infotype" : "<a href='#'>BJM100001</a>",
+			"name" : " 马艳红",
+			"enterdate" : "陈笛丽佳",
+			"ispass" : "商货",
+			"passdate" : "广大银行",
+			"assess" :"370",
+			"opt" : tableOptBtn,
+		},{
+			"info" : "2",
+			"infotype" : "<a href='#'>BJM100001</a>",
+			"name" : " 周芬芳",
+			"enterdate" : "陈笛丽佳",
+			"ispass" : "商货",
+			"passdate" : "广大银行",
+			"assess" :"370",
+			"opt" : tableOptBtn,
+		},{
+			"info" : "3",
+			"infotype" : "<a href='#'>BJM100001</a>",
+			"name" : " 李维一",
+			"enterdate" : "陈笛丽佳",
+			"ispass" : "商货",
+			"passdate" : "广大银行",
+			"assess" :"370",
+			"opt" : tableBtn,
+		},{
+			"info" : "4",
+			"infotype" : "<a href='#'>BJM100001</a>",
+			"name" : " 周德进",
+			"enterdate" : "陈笛丽佳",
+			"ispass" : "商货",
+			"passdate" : "广大银行",
+			"assess" :"370",
+			"opt" : tableOptBtn,
+		},{
+			"info" : "5",
+			"infotype" : "<a href='#'>BJM100001</a>",
+			"name" : " 蔚然锦",
+			"enterdate" : "陈笛丽佳",
+			"ispass" : "商货",
+			"passdate" : "广大银行",
+			"assess" :"370",
+			"opt" : tableBtn,
+		}];
+
+		//初始化表格
+		//详细使用说明参见http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
+		$('#dataTable').bootstrapTable({
+			data : tableData
+		});
+	});
+	
+	var myChart = echarts.init(document.getElementById("echarts-line-chart"));
+	option = {
+			color:['#95A3CE','#3588E9','#3AC137','#F93D67',],
+		    tooltip: {
+		        trigger: 'item',
+		    },
+		    legend: {
+		    	right:'20',
+		        orient: 'vertical',
+		        x: 'left',
+		        data:['业务处理','指定交易计划','指定贷款银行','其他',]
+		    },
+		    series: [
+		        {
+		            name:'',
+		            type:'pie',
+		            radius: ['50%', '70%'],
+		            avoidLabelOverlap: false,
+		            label: {
+		                normal: {
+		                    show: false,
+		                    position: 'center'
+		                },
+		                emphasis: {
+		                    show: true,
+		                    textStyle: {
+		                        fontSize: '12',
+		                    }
+		                }
+		            },
+		            labelLine: {
+		                normal: {
+		                    show: false
+		                }
+		            },
+		            data:[
+		                {value:335, name:'业务处理'},
+		                {value:310, name:'指定交易计划'},
+		                {value:234, name:'指定贷款银行'},
+		                {value:135, name:'其他'},
+		            ]
+		        }
+		    ]
+		};
+
+	myChart.setOption(option)
+	window.onresize = myChart.resize;
+
+</script>		
+</body>
+</html>

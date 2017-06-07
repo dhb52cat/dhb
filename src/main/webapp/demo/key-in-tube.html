@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<!--[if lt IE 9]>
+<meta http-equiv="refresh" content="0;ie.html" />
+<![endif]-->
+<!-- css -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link href="/base/static/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="/base/static/resources/css/plugins/chosen/chosen.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/treeview/bootstrap-treeview.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+<!-- 全局js -->
+<script src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript">
+	var basePath = '/base';
+</script>
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/base/static/resources/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="/base/static/resources/js/plugins/layer2.1/laydate/laydate.js"></script>
+<script src="/base/static/resources/js/plugins/layer/layer.js"></script>
+<script src="/base/static/resources/js/plugins/chosen/chosen.jquery.js"></script>
+<!-- 公共js -->
+<script src="/base/static/resources/js/utils.js"></script>
+<script src="/base/static/resources/js/content.js"></script>
+
+<div class="ibox">
+	<div class="ibox-title">
+		<h5>查询条件</h5>
+		<div class="ibox-tools">
+			<a class="collapse-link ui-sortable"> <i class="fa fa-chevron-up"></i>
+			</a>
+		</div>
+	</div>
+	<div class="ibox-content">
+		<form class="form-horizontal" role="form">
+			<div class="row">
+				
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">信息类型:</label>
+						<div class="col-sm-8">
+							<select id="select_comp" name="compId" class="form-control"
+								data-placeholder="请选择分公司">
+								<option value=""></option>
+								<option value="1">所有</option>
+								<option value="2">北京分公司</option>
+								<option value="2">上海分公司</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">房源编号:</label>
+						<div class="col-sm-8">
+							<input type="email" class="form-control"
+							 	id="exampleInputEmail2" placeholder="请输入用户名">
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">钥匙编号:</label>
+						<div class="col-sm-8">
+							<input type="email" class="form-control"
+							 	id="exampleInputEmail2" placeholder="请输入用户名">
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="row">
+				<div class="col-md-4">
+					<div class="form-group">
+						<label class="col-sm-4 control-label">钥匙状态:</label>
+						<div class="col-sm-8">
+							<select id="select_comp" name="compId" class="form-control"
+								data-placeholder="请选择分公司">
+								<option value=""></option>
+								<option value="1">全部</option>
+								<option value="2">北京分公司</option>
+								<option value="2">上海分公司</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="form-group">
+						<div class="col-sm-5  col-sm-offset-2">
+							<button id="search" type="button" class="btn btn-success pr5">查 询</button>
+							<button id="reset" type="reset" class="btn btn-default">重 置</button>
+						</div>
+					</div>
+				</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+<div class="ibox float-e-margins">
+	<div class="ibox-content">
+		<div class="row row-lg">
+			<div class="col-sm-12">
+				<!-- Example Pagination -->
+				<div class="example-wrap ptb10">
+					<p>
+                        <a class="btn btn-white btn-bitbucket">
+                            <i class="glyphicon glyphicon-plus"></i>
+                        </a>
+                        <a class="btn btn-white btn-bitbucket">
+                            <i class="glyphicon glyphicon-repeat"></i>
+                        </a>
+                    </p>
+					<table id="dataTable" class="table table-hover  table-striped" data-query-params="queryParams"
+						data-mobile-responsive="true" data-pagination="true"
+						data-icon-size="outline" data-striped="true" data-search="false">
+						<thead>
+							<tr>
+								<th data-field="type">信息类型</th>
+								<th data-field="num">房源编号<br>钥匙编号</th>
+								<th data-field="price">钥匙存放店</th>
+								<th data-field="states">钥匙状态</th>
+								<th data-field="name">借用人</th>
+								<th data-field="date">借用时间<br>预计还钥匙时间</th>
+								<th data-field="opt">操作</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- End Example Pagination -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Bootstrap table -->
+<div id="editkey_layer" class="ibox-content" style="display: none">
+	<form id="editkey_form" name="editkey_form" class="form-horizontal">
+		<div class="form-group">
+			<label class="col-sm-3 control-label">钥匙编号：</label>
+			<div class="col-sm-8">
+				<input type="text" class="form-control" name="name"
+					placeholder="请输入钥匙编号" required>
+			</div>
+		</div>
+	</form>
+</div>
+<div id="borrowkey_layer" class="ibox-content" style="display: none">
+	<form id="borrowkey_form" name="borrowkey_form" class="form-horizontal">
+		<div class="form-group">			
+			<label class="col-sm-3 control-label">钥匙存放店：</label>	
+			<p class="col-sm-3 form-control-static">南新仓管理中心</p>				
+			<label class="col-sm-3 control-label">钥匙编号：</label>	
+			<p class="col-sm-3 form-control-static">23</p>	
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">预计还钥匙时间：</label>					
+			<input  class="col-sm-3" onclick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})">							
+			<label class="col-sm-3 control-label">借用人：</label>			
+			<div class="col-sm-3">	
+				<div class="input-group">
+				<input type="text" class="form-control" id="J_community_data">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>						
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">备注：</label>	
+			<div class="col-sm-6">					
+				<textarea class="form-control" placeholder="请输入备注信息"></textarea>		
+			</div>
+		</div>
+	</form>
+</div>
+<div id="turnkey_layer" class="ibox-content" style="display: none">
+	<form id="turnkey_form" name="borrowkey_form" class="form-horizontal">
+		<div class="form-group">			
+			<label class="col-sm-3 control-label">房源编号：</label>	
+			<p class="col-sm-3 form-control-static">11310375</p>				
+			<label class="col-sm-3 control-label">钥匙编号：</label>	
+			<p class="col-sm-3 form-control-static">23</p>	
+		</div>
+		<div class="form-group">						
+			<label class="col-sm-3 control-label">借用人：</label>			
+			<div class="col-sm-3">	
+				<div class="input-group">
+				<input type="text" class="form-control" id="J_community_data">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>						
+			</div>
+			<label class="col-sm-3 control-label">钥匙转存店：</label>			
+			<div class="col-sm-3">	
+				<div class="input-group">
+				<input type="text" class="form-control" id="J_community_data">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-white dropdown-toggle" data-toggle="dropdown">
+						<span class="glyphicon glyphicon-search search-caret"></span>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-right" role="menu">
+					</ul>
+				</div>
+			</div>						
+			</div>
+		</div>
+	</form>
+</div>
+<div id="retreatkey_layer" class="ibox-content" style="display: none">
+	<form id="retreatkey_form" name="retreatkey_form" class="form-horizontal">
+		<div class="form-group">			
+			<label class="col-sm-3 control-label">房源编号：</label>	
+			<p class="col-sm-3 form-control-static">11310375</p>				
+			<label class="col-sm-3 control-label">钥匙编号：</label>	
+			<p class="col-sm-3 form-control-static">23</p>	
+		</div>
+		<div class="form-group">						
+			<label class="col-sm-3 control-label">学校等级：</label>
+			<div id="J_schoolLevel" class="col-sm-9"></div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">领取人：</label>	
+			<div class="col-sm-3">
+				<input type="text" class="form-control">
+			</div>
+		</div>
+	</form>
+</div>
+</div>
+<!-- 引入自定义JS -->
+	<script src="/base/resources/script/demo/key-in-tube.js?v=2"></script>
+	<script src="/base/static/resources/js/utils.js"></script>
+	<script type="text/javascript" src="/base/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		dimContainer.buildDimRadio($("#J_schoolLevel"), "schoolLevel", "schoolLevel", "");
+	</script>
+
+<script type="text/javascript">
+	$(function() {
+		$("select").chosen({
+			width : "100%"
+		});
+
+		var tableOptBtn = "<button type=\"button\" data-opt=\"edit\" class=\"btn btn-outline btn-success btn-xs mt-3\" data-node=\"#node#\" onclick=\"edit(this)\">查看</button>&nbsp;&nbsp;"
+			+ "<button type=\"button\" data-opt=\"editkey\" class=\"btn btn-outline btn-success btn-xs mt-3\" data-node=\"#node#\" onclick=\"editkey(this)\">钥匙号修改</button>&nbsp;&nbsp;"
+			+ "<button type=\"button\" data-opt=\"borrowkey\" class=\"btn btn-outline btn-success btn-xs mt-3\" data-node=\"#node#\" onclick=\"borrowkey(this)\">借钥匙</button>&nbsp;&nbsp;"
+			+ "<button type=\"button\" data-opt=\"turnkey\" class=\"btn btn-outline btn-success btn-xs mt-3\" data-node=\"#node#\" onclick=\"turnkey(this)\">钥匙转店</button>&nbsp;&nbsp;"
+		+ "<button type=\"button\" data-opt=\"retreatkey\" class=\"btn btn-outline btn-danger btn-xs mt-3\" data-node=\"#node#\" onclick=\"retreatkey(this)\">退钥匙</button>";
+
+		var tableData = [ {
+			"type" : "买卖",
+			"num" : "&nbsp;11313322<BR>&nbsp;2222256",
+			"price" : "南新仓管理中心",
+			"states" : "本店存放",
+			"name" : "tom7",
+			"date" : "&nbsp;2017-01-12 16:47<BR>&nbsp;2017-01-27 00:00",
+			"opt" : tableOptBtn
+		}, {
+			"type" : "买卖",
+			"num" : "&nbsp;11313322<BR>&nbsp;2222256",
+			"price" : "南新仓管理中心",
+			"states" : "本店存放",
+			"name" : "tom7",
+			"date" : "&nbsp;2017-01-12 16:47<BR>&nbsp;2017-01-27 00:00",
+			"opt" : tableOptBtn
+		}, {
+			"type" : "买卖",
+			"num" : "&nbsp;11313322<BR>&nbsp;2222256",
+			"price" : "南新仓管理中心",
+			"states" : "本店存放",
+			"name" : "tom7",
+			"date" : "&nbsp;2017-01-12 16:47<BR>&nbsp;2017-01-27 00:00",
+			"opt" : tableOptBtn
+		}, {
+			"id" : 3,
+			"name" : "测试3",
+			"price" : "&yen;3",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"id" : 4,
+			"name" : "测试4",
+			"price" : "&yen;4",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"id" : 5,
+			"name" : "测试5",
+			"price" : "&yen;5",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"id" : 6,
+			"name" : "测试6",
+			"price" : "&yen;6",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"id" : 7,
+			"name" : "测试7",
+			"price" : "&yen;7",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"id" : 8,
+			"name" : "测试8",
+			"price" : "&yen;8",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"id" : 9,
+			"name" : "测试9",
+			"price" : "&yen;9",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"id" : 10,
+			"name" : "测试10",
+			"price" : "&yen;10",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"id" : 11,
+			"name" : "测试11",
+			"price" : "&yen;11",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		} ];
+
+		//初始化表格
+		//详细使用说明参见http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
+		$('#dataTable').bootstrapTable({
+			data : tableData
+		});
+	});
+</script>
+</body>
+</html>

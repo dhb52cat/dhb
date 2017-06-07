@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<!-- css -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/chosen/chosen.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/treeview/bootstrap-treeview.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+<!-- 全局js -->
+<script src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+<!--[if lt IE 9]>
+<script src="/base/resources/script/compatible/html5shiv.min.js"></script>
+<script src="/base/resources/script/compatible/respond.min.js"></script>
+<script src="/base/static/resources/js/jquery-1.9.1.min.js"></script>
+<![endif]-->
+<script type="text/javascript">
+	var basePath = '/fund';
+</script>
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+		<div class="row">
+	<div class="tabs-container">
+		<ul class="nav nav-tabs">
+			<li class="active"><a data-toggle="tab" href="#tab-1">
+					协议基本信息</a></li>
+			<li class=""><a data-toggle="tab" href="#tab-2"> 协议附件信息</a></li>
+			<li class=""><a data-toggle="tab" href="#tab-3"> 协议监管进程</a></li>
+			<li class=""><a data-toggle="tab" href="#tab-4"> 协议追踪记录</a></li>
+		</ul>
+		<div class="tab-content ">
+			<div id="tab-1" class="tab-pane active">
+				<div class="panel-body"><div class="row">
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<h4>托管银行信息</h4>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-6">
+						<dl class="dl-horizontal">
+							<dt>买卖合同编号：</dt>
+							<dd>MMHTBH2016091201</dd>
+							<dt>银行名称：</dt>
+							<dd>中国光大银行</dd>
+							<dt>联系电话：</dt>
+							<dd>65279078</dd>
+							<dt>地址：</dt>
+							<dd>东城区朝阳门北大街17号</dd>
+						</dl>
+					</div>
+					<div class="col-sm-6">
+						<dl class="dl-horizontal">
+							<dt>授权银行网点：</dt>
+							<dd>中国光大银行朝内支行</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ibox float-e-margins">
+			<h4>卖方代理人信息</h4>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-4">
+						<dl class="dl-horizontal">
+							<dt>买卖合同编号：</dt>
+							<dd>MMHTBH2016091201</dd>
+							<dt>银行名称：</dt>
+							<dd>中国光大银行</dd>
+							<dt>支付条件：</dt>
+							<dd>
+								<div>条件一</div>
+								<div>条件二</div>
+								<div>条件三</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="col-sm-4">
+						<dl class="dl-horizontal">
+							<dt>授权银行网点：</dt>
+							<dd>中国光大银行朝内支行</dd>
+							<dt>联系电话：</dt>
+							<dd>65279078</dd>
+							<dt>解冻金额1：</dt>
+							<dd>10000</dd>
+							<dt>解冻金额2：</dt>
+							<dd>10000</dd>
+							<dt>解冻金额3：</dt>
+							<dd>10000</dd>
+						</dl>
+					</div>
+					<div class="col-sm-4">
+						<dl class="dl-horizontal">
+							<dt>买卖合同编号：</dt>
+							<dd>MMHTBH2016091201</dd>
+							<dt>银行名称：</dt>
+							<dd>中国光大银行</dd>
+							<dt>联系电话：</dt>
+							<dd>65279078</dd>
+							<dt>地址：</dt>
+							<dd>东城区朝阳门北大街17号</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="form-group">
+		<div class="col-sm-offset-5">
+			<button class="btn btn-success" type="submit">提交公司审批</button>
+			<button class="btn btn-success" type="submit">公司退回</button>
+			<button class="btn btn-white" type="submit">提交至银行</button>
+		</div>
+	</div>
+</div></div>
+			</div>
+			<div id="tab-2" class="tab-pane">
+				<div class="panel-body"><div class="row">
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>身份证复印件</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link ui-sortable"> <i
+						class="fa fa-chevron-up"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="image">
+									<img src="/base/resources/img/demo/p1.jpg"
+										class="img-responsive" alt="image">
+								</div>
+								<div class="file-name">
+									<p>代理人身份证正面</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+
+								<div class="image">
+									<img src="/base/resources/img/demo/p2.jpg"
+										class="img-responsive" alt="image">
+								</div>
+								<div class="file-name">
+									<p>代理人身份证反面</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="image">
+									<img src="/base/resources/img/demo/p1.jpg"
+										class="img-responsive" alt="image">
+								</div>
+								<div class="file-name">
+									<p>代理人身份证正面</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+
+								<div class="image">
+									<img src="/base/resources/img/demo/p2.jpg"
+										class="img-responsive" alt="image">
+								</div>
+								<div class="file-name">
+									<p>代理人身份证反面</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="image">
+									<img src="/base/resources/img/demo/p1.jpg"
+										class="img-responsive" alt="image">
+								</div>
+								<div class="file-name">
+									<p>代理人身份证正面</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+
+								<div class="image">
+									<img src="/base/resources/img/demo/p2.jpg"
+										class="img-responsive" alt="image">
+								</div>
+								<div class="file-name">
+									<p>代理人身份证反面</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="image">
+									<img src="/base/resources/img/demo/p1.jpg"
+										class="img-responsive" alt="image">
+								</div>
+								<div class="file-name">
+									<p>代理人身份证正面</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+
+								<div class="image">
+									<img src="/base/resources/img/demo/p2.jpg"
+										class="img-responsive" alt="image">
+								</div>
+								<div class="file-name">
+									<p>代理人身份证反面</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>监管资金划转基础件</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link ui-sortable"> <i
+						class="fa fa-chevron-up"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="icon">
+									<i class="fa fa-file"></i>
+								</div>
+								<div class="file-name">
+									<p>网签合同</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="icon">
+									<i class="fa fa-file"></i>
+								</div>
+								<div class="file-name">
+									<p>网签合同</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="icon">
+									<i class="fa fa-file"></i>
+								</div>
+								<div class="file-name">
+									<p>网签合同</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="icon">
+									<i class="fa fa-file"></i>
+								</div>
+								<div class="file-name">
+									<p>网签合同</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="icon">
+									<i class="fa fa-file"></i>
+								</div>
+								<div class="file-name">
+									<p>网签合同</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="icon">
+									<i class="fa fa-file"></i>
+								</div>
+								<div class="file-name">
+									<p>网签合同</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+						<div class="file-box animated pulse">
+							<div class="file">
+								<div class="icon">
+									<i class="fa fa-file"></i>
+								</div>
+								<div class="file-name">
+									<p>网签合同</p>
+									<small><button
+											class="btn btn-outline btn-success btn-xs" type="button">下载</button>
+										<button class="btn btn-outline btn-danger btn-xs"
+											type="button">删除</button> </small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+			</div>
+			<div id="tab-3" class="tab-pane">
+				<div class="panel-body"><div class="row">
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>1、签署协议</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link ui-sortable"> <i
+						class="fa fa-chevron-up"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content">
+				<div class="row">
+					<label class="col-sm-1 control-label">协议状态</label>
+					<div class="col-sm-11">
+						<span class="form-control-static text-success">申请中</span>
+					</div>
+				</div>
+			</div>
+			<div class="ibox-content gray-bg">
+				<div class="row">
+					<div class="col-md-3">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>进程1.1 协议申请</h5>
+							</div>
+							<div class="ibox-content">
+								<h5>进程说明</h5>
+								<p>说明1</p>
+								<p>说明2</p>
+								<p>说明3</p>
+								<p>说明4</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>进程1.2 协议审批</h5>
+							</div>
+							<div class="ibox-content">
+								<h5>进程说明</h5>
+								<p>说明1</p>
+								<p>说明2</p>
+								<p>说明3</p>
+								<p>
+									<button class="btn btn-success btn-xs" type="button">刷新状态</button>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>进程1.3 签章</h5>
+							</div>
+							<div class="ibox-content">
+								<h5>进程说明</h5>
+								<p>说明1</p>
+								<p>说明2</p>
+								<p>说明3</p>
+								<p>
+									<button class="btn btn-success btn-xs" type="button">提交银行签章</button>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5>进程1.4 买卖双方签字</h5>
+							</div>
+							<div class="ibox-content">
+								<h5>进程说明</h5>
+								<p>说明1</p>
+								<p>说明2</p>
+								<p>说明3</p>
+								<p>
+									<button class="btn btn-success btn-xs" type="button">打印</button>
+									<button class="btn btn-success btn-xs" type="button">买卖双方已签</button>
+									<button class="btn btn-success btn-xs" type="button">上传签字扫描件</button>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>2、建立监管账户</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link ui-sortable"> <i
+						class="fa fa-chevron-up"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content">
+				<div class="row">
+					<form class="form-horizontal">
+						<div class="col-sm-4">
+							<label class="col-sm-4 control-label">缴存状态</label>
+							<div class="col-sm-8">
+								<p class="form-control-static text-danger">未开通</p>
+							</div>
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+						</div>
+					</form>
+					<div class="col-sm-12 col-sm-offset-5">
+						<button class="btn btn-success btn-xs" type="button">刷新状态</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>3、缴存</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link ui-sortable"> <i
+						class="fa fa-chevron-up"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content">
+				<div class="row">
+					<form class="form-horizontal">
+						<div class="col-sm-4">
+							<label class="col-sm-4 control-label">缴存状态</label>
+							<div class="col-sm-8">
+								<p class="form-control-static text-danger">未开通</p>
+							</div>
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+							<label class="col-sm-4 control-label">成交价</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+						</div>
+					</form>
+					<div class="col-sm-offset-4">
+						<button class="btn btn-success btn-xs" type="button">刷新状态</button>
+						<button class="btn btn-success btn-xs" type="button">查看缴存金额明细</button>
+						<button class="btn btn-success btn-xs" type="button">上传POS小票</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>4、监管资金划转</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link ui-sortable"> <i
+						class="fa fa-chevron-up"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content">
+				<div class="row">
+					<div class="col-sm-6">
+						<h5>进程说明</h5>
+						<p>1、补录网签信息</p>
+						<p>2、上传附件：买卖双方签字的网签合同和建委资金监管协议</p>
+						<p>3、公司审批及银行审批</p>
+						<p>4、从买方账户划转建委监管资金给建委，剩余给卖方（买方）监管账户</p>
+						<button class="btn btn-success btn-xs" type="button">补录网签</button>
+						<button class="btn btn-success btn-xs" type="button">提交公司审批</button>
+						<button class="btn btn-success btn-xs" type="button">查看</button>
+						<button class="btn btn-success btn-xs" type="button">修改</button>
+					</div>
+					<div class="col-sm-6">
+						<form class="form-horizontal">
+							<label class="col-sm-4 control-label">资金划转状态</label>
+							<div class="col-sm-8">
+								<p class="form-control-static text-danger">未申请</p>
+							</div>
+							<label class="col-sm-4 control-label">建委划转后买方账户金额</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+							<label class="col-sm-4 control-label">建委划转后买方账户金额</label>
+							<div class="col-sm-8">
+								<p class="form-control-static">10000</p>
+							</div>
+						</form>
+						<div class="col-sm-offset-4">
+							<button class="btn btn-success btn-xs" type="button">刷新状态</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>5、过户</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link ui-sortable"> <i
+						class="fa fa-chevron-up"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content">
+				<div class="row">
+					<label class="col-sm-1 control-label">是否过户</label>
+					<div class="col-sm-1">
+						<span class="form-control-static text-info">已过户</span>
+					</div>
+					<div class="col-sm-10">
+						<button class="btn btn-success btn-xs" type="button">刷新状态</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>6、解冻及退款</h5>
+				<div class="ibox-tools">
+					<a class="collapse-link ui-sortable"> <i
+						class="fa fa-chevron-up"></i>
+					</a>
+				</div>
+			</div>
+			<div class="ibox-content">
+				<h5>进程说明</h5>
+				<p>1、录入划款申请</p>
+				<p>2、上传附件：上传</p>
+				<p>3、根据过户是否成功，将钱划转到对应的账户</p>
+				<p>
+					<button class="btn btn-success btn-xs" type="button">解冻及退款申请</button>
+				</p>
+				<table data-toggle="table" data-query-params="queryParams"
+					data-mobile-responsive="true" data-pagination="true"
+					data-icon-size="outline" data-striped="true" data-search="false"
+					data-height="400">
+					<thead>
+						<tr>
+							<th data-field="id">ID</th>
+							<th data-field="name">名称</th>
+							<th data-field="price">价格</th>
+							<th data-field="opt">操作</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+</div></div>
+			</div>
+			<div id="tab-4" class="tab-pane">
+				<div class="panel-body">
+					<strong>协议追踪记录</strong>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+	<!-- js插件 -->
+ <script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/base/static/resources/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+ <!-- 公共js -->
+<script src="/base/static/resources/js/utils.js"></script>
+<script src="/base/static/resources/js/content.js"></script>
+</body>
+</html>

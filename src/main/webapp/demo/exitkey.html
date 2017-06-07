@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<!--[if lt IE 9]>
+<meta http-equiv="refresh" content="0;ie.html" />
+<![endif]-->
+<!-- css -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link href="/base/static/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="/base/static/resources/css/plugins/chosen/chosen.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/treeview/bootstrap-treeview.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+<!-- 全局js -->
+<script src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+</head>
+<body class="gray-bg">
+<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/base/static/resources/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="/base/static/resources/js/plugins/layer2.1/laydate/laydate.js"></script>
+<script src="/base/static/resources/js/plugins/layer/layer.js"></script>
+<script src="/base/static/resources/js/plugins/chosen/chosen.jquery.js"></script>
+
+<!-- 公共js -->
+<script src="/base/static/resources/js/utils.js"></script>
+<script src="/base/static/resources/js/content.js"></script>
+<div class="wrapper wrapper-content">
+	<div class="ibox float-e-margins" style="margin-bottom: 5px;">
+	    <div class="ibox-title">
+	        <h5>退钥匙记录</h5>
+	        <div class="ibox-tools">
+	            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+	        </div>
+	    </div>
+	    <div class="ibox-content">
+			<div class="row">
+		        <form class="form-horizontal query" id="queryForm" role="form">
+		        	<div class="col-md-4">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">信息类型</label>
+							<div class="col-sm-8">
+								<select id="J_infotype" name="infotype" class="form-control m-b" data-placeholder="全部" style="width:250px;">
+				                     <option value="">全部</option>
+				                     <option value="1">租聘</option>
+				                     <option value="2">买卖</option>
+				                     <option value="3">房管</option>
+				                 </select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">钥匙状态</label>
+							<div class="col-sm-8">
+								<select id="J_keystatus" name="keystatus" class="form-control m-b" data-placeholder="全部" style="width:250px;">
+				                     <option value="">全部</option>
+				                     <option value="0">退钥匙</option>
+				                     <option value="1">收钥匙退回</option>
+				                 </select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">领取类型</label>
+							<div class="col-sm-8">
+								<select id="J_typesof" name="typesof" class="form-control m-b" data-placeholder="全部" style="width:250px;">
+				                     <option value="">全部</option>
+				                     <option value="1">业主领取</option>
+				                     <option value="2">委托人领取</option>
+				                     <option value="3">经纪人领取</option>
+				                     <option value="4">客户领取</option>
+				                 </select>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="col-sm-3 control-label">房源编号</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" name="housenum" placeholder="请输入房源编号" >
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label class="col-sm-3 control-label"></label>
+							<div class="col-sm-8">
+								<button id="Inquire" type="button" class="btn btn-success">&nbsp;&nbsp;查&nbsp;&nbsp;询&nbsp;&nbsp;</button>
+								&nbsp;&nbsp;
+								<button id="reset" type="reset" class="btn btn-default">&nbsp;&nbsp;重&nbsp;&nbsp;置&nbsp;&nbsp;</button>
+							</div>
+						</div>
+					</div>
+		        </form>
+		    </div>
+		</div>
+	</div>
+	<div class="ibox float-e-margins">
+	    <div class="ibox-content">
+	  		<div class="row row-lg">
+				<div class="col-sm-12">
+					<!-- Example Pagination -->
+					<table id="dataTable" class="table table-hover  table-striped" data-query-params="queryParams"
+					data-mobile-responsive="true" data-pagination="true"
+					data-icon-size="outline" data-striped="true" data-search="false">
+						<thead>
+							<tr>
+								<th data-field="infotype">信息类型</th>
+								<th data-field="housenum">房源编号</th>
+								<th data-field="name">收钥匙人</th>
+								<th data-field="keytime">收钥匙时间<br>退钥匙时间</th>
+								<th data-field="keystatus">钥匙状态</th>
+								<th data-field="typesof">领取类型</th>
+								<th data-field="people">领取人</th>
+								<th data-field="opt">操作</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- End Example Pagination -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 自定义js -->
+<script type="text/javascript">
+	$(function() {
+		$("select").chosen({
+			width : "100%"
+		});
+
+		var tableOptBtn = "<a href=\"/base/demo/exitkey_list.html\" data-opt=\"Inquire\" class=\"btn btn-outline btn-success btn-xs mt-3\" data-node=\"#node#\" onclick=\"Inquire(this)\" target=\"_blank\">查看</a>&nbsp;&nbsp;"
+
+		var tableData = [ {
+			"infotype" : "租聘",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "买卖",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "租聘",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "房管",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "租聘",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "买卖",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "买卖",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "买卖",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "房管",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "租聘",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "房管",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		}, {
+			"infotype" : "租聘",
+			"housenum" : "11020102",
+			"name" : "topm3232",
+			"keytime" : "--<br/>--",
+			"keystatus" : "退钥匙",
+			"typesof" : "业主领取",
+			"people" : "--",
+			"opt" : tableOptBtn,
+			"column2" : "c20",
+			"column3" : "c30",
+			"column4" : "c40"
+		} ];
+		
+		//初始化表格
+		//详细使用说明参见http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
+		$('#dataTable').bootstrapTable({
+			data : tableData
+		});
+	});
+</script>
+</body>
+</html>

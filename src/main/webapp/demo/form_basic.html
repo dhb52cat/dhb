@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<!--[if lt IE 9]>
+<meta http-equiv="refresh" content="0;ie.html" />
+<![endif]-->
+<!-- css -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="stylesheet" type="text/css"
+	href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css"
+	href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link
+	href="/base/static/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css"
+	rel="stylesheet">
+<link href="/base/static/resources/css/plugins/chosen/chosen.css"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css"
+	href="/base/static/resources/css/plugins/treeview/bootstrap-treeview.css">
+<link rel="stylesheet" type="text/css"
+	href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css"
+	href="/base/static/resources/css/animate.css">
+<link rel="stylesheet" type="text/css"
+	href="/base/static/resources/css/style.css?v=4.1.0">
+<!-- 全局js -->
+<script src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+</head>
+<script src="/base/static/resources/js/plugins/layer2.1/laydate/laydate.js"></script>
+<script src="/base/static/resources/js/plugins/chosen/chosen.jquery.js"></script>
+<script
+	src="/base/static/resources/js/plugins/prettyfile/bootstrap-prettyfile.js"></script>
+<!-- 公共js -->
+<script src="/base/static/resources/js/utils.js"></script>
+<script src="/base/static/resources/js/content.js"></script>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+<div class="row">
+	<div class="col-sm-12">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>表单标题</h5>
+			</div>
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">信息</label>
+
+						<div class="col-sm-10">
+							<p class="form-control-static">不可编辑</p>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">带说明信息</label>
+						<div class="col-sm-10">
+							<input type="text" class="form-control"> <span
+								class="help-block m-b-none">此处填写说明性信息</span>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">密码</label>
+
+						<div class="col-sm-10">
+							<input type="password" class="form-control" name="password">
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">提示</label>
+
+						<div class="col-sm-10">
+							<input type="text" placeholder="此处填写提示信息" class="form-control">
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">禁用</label>
+
+						<div class="col-sm-10">
+							<input type="text" disabled="" placeholder="已被禁用"
+								class="form-control">
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">日期控件</label>
+
+						<div class="col-sm-10">
+							<input id="birth" class="form-control layer-date"
+								placeholder="开始日期"
+								onclick="laydate({istime: false, format: 'YYYY-MM-DD'})">
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">单文件上传</label>
+						<div class="col-sm-10">
+							<input type="file" id="inputfile">
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">多文件上传</label>
+						<div class="col-sm-10">
+							<input type="file" multiple="multiple">
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">块级单选框 <br />
+						</label>
+
+						<div class="col-sm-10">
+							<div class="radio radio-primary">
+								<input type="radio" id="blockRadio1" name="option"
+									value="option1"> <label for="blockRadio1">选项1</label>
+							</div>
+							<div class="radio radio-primary">
+								<input type="radio" id="blockRadio2" name="option"
+									value="option2"> <label for="blockRadio2">选项2</label>
+							</div>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">行级单选框 <br />
+						</label>
+
+						<div class="col-sm-10">
+							<div class="radio radio-primary radio-inline">
+								<input type="radio" id="inlineRadio1" name="inlineOption"
+									value="option1"> <label for="inlineRadio1">选项1</label>
+							</div>
+							<div class="radio radio-primary radio-inline">
+								<input type="radio" id="inlineRadio2" name="inlineOption"
+									value="option2"> <label for="inlineRadio2">选项2</label>
+							</div>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">无文本复选框</label>
+
+						<div class="col-sm-10">
+							<div class="checkbox checkbox-primary">
+								<input type="checkbox" value="option2"> <label></label>
+							</div>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">块级复选框</label>
+
+						<div class="col-sm-10">
+							<div class="checkbox checkbox-primary">
+								<input type="checkbox" checked="" id="blockcheckbox1"> <label
+									for="blockcheckbox1"> 选项1 </label>
+							</div>
+							<div class="checkbox checkbox-primary">
+								<input type="checkbox" id="blockcheckbox2"> <label
+									for="blockcheckbox2"> 选项2 </label>
+							</div>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">行级复选框</label>
+
+						<div class="col-sm-10">
+							<div class="checkbox checkbox-primary checkbox-inline">
+								<input type="checkbox" checked="" id="checkbox1"> <label
+									for="checkbox1"> 选项1 </label>
+							</div>
+							<div class="checkbox checkbox-primary checkbox-inline">
+								<input type="checkbox" id="checkbox2"> <label
+									for="checkbox2"> 选项2 </label>
+							</div>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">单选下拉框</label>
+						<div class="col-sm-10">
+							<select class="form-control m-b" name="account" id="demoSelect"
+								data-placeholder="请选择">
+								<option value=""></option>
+								<option value="1">选项 1</option>
+								<option value="2">选项 2</option>
+								<option value="3">选项 3</option>
+								<option value="4">选项 4</option>
+							</select>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label">多选下拉框</label>
+						<div class="col-sm-10">
+							<select class="form-control m-b" name="account"
+								id="demoMultSelect" data-placeholder="请选择" multiple>
+								<option value=""></option>
+								<option value="1">选项 1</option>
+								<option value="2">选项 2</option>
+								<option value="3">选项 3</option>
+								<option value="4">选项 4</option>
+								<option value="5">选项 5</option>
+								<option value="6">选项 6</option>
+								<option value="7">选项 7</option>
+								<option value="8">选项 8</option>
+							</select>
+						</div>
+					</div>
+					<div class="hr-line-dashed"></div>
+					<div class="form-group">
+						<div class="col-sm-4 col-sm-offset-5">
+							<button class="btn btn-success" type="submit">保 存</button>
+							<button class="btn btn-white" type="submit">取 消</button>
+						</div>
+					</div>
+			</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script src="/base/resources/script/demo/demo.js"></script>
+<script>
+	$(function() {
+		$("select").chosen({
+			width : "100%"
+		});
+	});
+</script>
+</body>
+</html>

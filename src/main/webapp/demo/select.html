@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+<!-- 全局js -->
+<script type="text/javascript" src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript" src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript" src="/base/static/resources/js/plugins/layer/layer.js"></script>
+
+<!-- 局部的 -->
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/chosen/chosen.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+<script type="text/javascript" src="/base/static/resources/js/plugins/chosen/chosen.jquery.js"></script>
+<script type="text/javascript" src="/base/resources/js/utils.js"></script>
+<script type="text/javascript" src="/base/resources/js/basic.js"></script>
+<!-- 无需引入的 -->
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/codemirror/codemirror.css">
+<script src="/base/static/resources/js/plugins/codemirror/codemirror.js"></script>
+<script src="/base/static/resources/js/plugins/codemirror/mode/javascript/javascript.js"></script>
+<style>
+li {
+	line-height: 24px;
+}
+</style>
+<script type="text/javascript">
+	var basePath = '/base';
+</script>
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+	
+<div class="ibox float-e-margins">
+	<!-- 示例列表begin -->
+	<div class="col-sm-3">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>下拉框ajax调用示例列表</h5>
+			</div>
+			<div class="ibox-content">
+				<ul>
+					<li><a id="unChecked" href="javascript:void(0);">未选中的示例（单选）</a></li>
+					<li><a id="checked" href="javascript:void(0);">已选中的示例（单选）</a></li>
+					<li><a id="multipleUnChecked" href="javascript:void(0);">未选中的示例（多选）</a></li>
+					<li><a id="multipleChecked" href="javascript:void(0);">已选中的示例（多选）</a></li>
+					<li><a id="largeUnChecked" href="javascript:void(0);">左右移动的示例</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 示例列表end -->
+	
+	<!-- 未选中的示例（单选）begin -->
+	<div id="ep_unchecked" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>未选中的下拉框示例（单选）代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">学校等级</label>
+						<div class="col-sm-10">
+							<select id="J_schoolLevel" name="schoolLevel" class="form-control m-b" data-placeholder="请选择">
+								<option value="">请选择</option>
+							</select>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					dimContainer.buildDimChosenSelector($("#J_schoolLevel"), "schoolLevel", "");
+				</script>
+
+<h4>示例代码：</h4>				
+<textarea id="area_unchecked">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">学校等级</label>
+		<div class="col-sm-10">
+			<select id="J_schoolLevel" name="schoolLevel" class="form-control m-b" data-placeholder="请选择">
+				<option value="">请选择</option>
+			</select>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/chosen/chosen.jquery.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+	dimContainer.buildDimChosenSelector($("#J_schoolLevel"), "schoolLevel", "");
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- 未选中的示例（单选）end -->
+	
+	<!-- 已选中的示例（单选）begin -->
+	<div id="ep_checked" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>已选中的下拉框示例（单选）代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">车位类型</label>
+						<div class="col-sm-10">
+							<select id="J_parkingType" name="parkingType" class="form-control m-b" data-placeholder="请选择">
+								<option value="">请选择</option>
+							</select>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					dimContainer.buildDimChosenSelector($("#J_parkingType"), "parkingType", "2");
+				</script>
+
+<h4>示例代码：</h4>				
+<textarea id="area_checked">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">车位类型</label>
+		<div class="col-sm-10">
+			<select id="J_parkingType" name="parkingType" class="form-control m-b" data-placeholder="请选择">
+				<option value="">请选择</option>
+			</select>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/chosen/chosen.jquery.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		dimContainer.buildDimChosenSelector($("#J_parkingType"), "parkingType", "2");
+	</script>
+</textarea>
+			</div>
+			
+		</div>
+	</div>
+	<!-- 已选中的示例（单选）end -->
+	
+	<!-- 未选中的示例（多选）begin -->
+	<div id="ep_multiple_unchecked" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>未选中的下拉框示例（多选）代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">供暖方式</label>
+						<div class="col-sm-10">
+							<select id="J_heatingMode" name="heatingMode" class="form-control m-b" multiple data-placeholder="请选择">
+							</select>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					dimContainer.buildDimChosenSelector($("#J_heatingMode"), "heatingMode", "");
+				</script>
+
+<h4>示例代码：</h4>				
+<textarea id="area_multiple_unchecked">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">供暖方式</label>
+		<div class="col-sm-10">
+			<select id="J_heatingMode" name="heatingMode" class="form-control m-b" multiple data-placeholder="请选择">
+			</select>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/chosen/chosen.jquery.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+	dimContainer.buildDimChosenSelector($("#J_heatingMode"), "heatingMode", "");
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- 未选中的示例（多选）end -->
+	
+	<!-- 已选中的示例（多选）begin -->
+	<div id="ep_multiple_checked" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>已选中的下拉框示例（多选）代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">供水方式</label>
+						<div class="col-sm-10">
+							<select id="J_waterMode" name="waterMode" class="form-control m-b" multiple data-placeholder="请选择">
+							</select>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					dimContainer.buildDimChosenSelector($("#J_waterMode"), "waterMode", "1,3");
+				</script>
+
+<h4>示例代码：</h4>				
+<textarea id="area_multiple_checked">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">供水方式</label>
+		<div class="col-sm-10">
+			<select id="J_waterMode" name="waterMode" class="form-control m-b" multiple data-placeholder="请选择">
+			</select>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/chosen/chosen.jquery.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		dimContainer.buildDimChosenSelector($("#J_waterMode"), "waterMode", "1,3");
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- 已选中的示例（多选）end -->
+	
+	<!-- 左右移动的示例begin -->
+	<div id="ep_largeUnChecked" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>左右移动的示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div id="J_areaDiv" class="form-group">
+						<label class="col-sm-2 control-label">所属区域</label>
+						<div class="col-sm-4 m-l-n">
+							<select id="J_area_left" name="area_left" class="form-control" multiple>
+								<option value=42732>北太平庄-花园路</option>
+								<option value=36827>北太平庄-黄亭子</option>
+								<option value=36823>北太平庄-积水潭</option>
+								<option value=45718>北太平庄-建德门桥</option>
+								<option value=45038>北太平庄-今典花园</option>
+								<option value=40570>北太平庄-马甸</option>
+								<option value=48378>北太平庄-马甸南村</option>
+								<option value=45717>北太平庄-民族园</option>
+								<option value=42970>北太平庄-明光村</option>
+								<option value=36829>北太平庄-牡丹园</option>
+								<option value=36825>北太平庄-双秀公园</option>
+							</select>
+						</div>
+						<div class="col-sm-2 m-l-n" style="text-align:center; padding-top:20px;">
+							<button id="J_addBtn" type="button" class="btn btn-outline btn-success btn-xs">添加>></button><br/>
+							<button id="J_delBtn" type="button" class="btn btn-outline btn-success btn-xs">删除<<</button>
+						</div>
+						<div class="col-sm-4 m-l-n">
+							<select id="J_area_right" name="area_right" class="form-control" multiple>
+								
+							</select>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+					dimContainer.buildMoveAreaSelector($("#J_areaDiv"), $("#J_area_left"), $("#J_area_right"));
+				</script> 
+
+<h4>示例代码：</h4>				
+<textarea id="area_large_unchecked">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div id="J_areaDiv" class="form-group">
+		<label class="col-sm-2 control-label">所属区域</label>
+		<div class="col-sm-4 m-l-n">
+			<select id="J_area_left" name="area_left" class="form-control" multiple>
+				<option value=42732>北太平庄-花园路</option>
+				<option value=36827>北太平庄-黄亭子</option>
+				<option value=36823>北太平庄-积水潭</option>
+				<option value=45718>北太平庄-建德门桥</option>
+				<option value=45038>北太平庄-今典花园</option>
+				<option value=40570>北太平庄-马甸</option>
+				<option value=48378>北太平庄-马甸南村</option>
+				<option value=45717>北太平庄-民族园</option>
+				<option value=42970>北太平庄-明光村</option>
+				<option value=36829>北太平庄-牡丹园</option>
+				<option value=36825>北太平庄-双秀公园</option>
+			</select>
+		</div>
+		<div class="col-sm-2 m-l-n" style="text-align:center; padding-top:20px;">
+			<button id="J_addBtn" type="button" class="btn btn-outline btn-success btn-xs">添加>></button>
+			<button id="J_delBtn" type="button" class="btn btn-outline btn-success btn-xs mt10">删除<<</button>
+		</div>
+		<div class="col-sm-4 m-l-n">
+			<select id="J_area_right" name="area_right" class="form-control" multiple>
+			</select>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/basic.js"></script>
+	<script type="text/javascript">
+		dimContainer.buildMoveAreaSelector($("#J_areaDiv"), $("#J_area_left"), $("#J_area_right"));
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- 左右移动的示例end -->
+</div>
+
+<!-- CodeMirror -->
+<script type="text/javascript">
+	$(document).ready(
+		function() {
+			editor1 = CodeMirror.fromTextArea(document.getElementById("area_unchecked"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor2 = CodeMirror.fromTextArea(document.getElementById("area_checked"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor3 = CodeMirror.fromTextArea(document.getElementById("area_multiple_unchecked"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor4 = CodeMirror.fromTextArea(document.getElementById("area_multiple_checked"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor5 = CodeMirror.fromTextArea(document.getElementById("area_large_unchecked"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			$("#unChecked").click();
+		});
+	
+	$("#unChecked").click(function(){
+		$("#ep_unchecked").show();
+		$("#ep_checked").hide();
+		$("#ep_multiple_unchecked").hide();
+		$("#ep_multiple_checked").hide();
+		$("#ep_largeUnChecked").hide();
+	});
+	
+	$("#checked").click(function(){
+		$("#ep_checked").show();
+		$("#ep_unchecked").hide();
+		$("#ep_multiple_unchecked").hide();
+		$("#ep_multiple_checked").hide();
+		$("#ep_largeUnChecked").hide();
+	});
+	
+	$("#multipleUnChecked").click(function(){
+		$("#ep_multiple_unchecked").show();
+		$("#ep_unchecked").hide();
+		$("#ep_checked").hide();
+		$("#ep_multiple_checked").hide();
+		$("#ep_largeUnChecked").hide();
+	});
+	
+	$("#multipleChecked").click(function(){
+		$("#ep_multiple_checked").show();
+		$("#ep_unchecked").hide();
+		$("#ep_checked").hide();
+		$("#ep_multiple_unchecked").hide();
+		$("#ep_largeUnChecked").hide();
+	});
+	
+	$("#largeUnChecked").click(function(){
+		$("#ep_largeUnChecked").show();
+		$("#ep_multiple_checked").hide();
+		$("#ep_unchecked").hide();
+		$("#ep_checked").hide();
+		$("#ep_multiple_unchecked").hide();
+	});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+<!-- 全局js -->
+<script type="text/javascript" src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script type="text/javascript" src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+<script type="text/javascript" src="/base/static/resources/js/plugins/layer/layer.js"></script>
+
+<!-- 局部的 -->
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/chosen/chosen.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+<script type="text/javascript" src="/base/static/resources/js/plugins/chosen/chosen.jquery.js"></script>
+<script type="text/javascript" src="/base/resources/js/utils.js"></script>
+<script type="text/javascript" src="/base/resources/js/linkage.js"></script>
+<!-- 无需引入的 -->
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/codemirror/codemirror.css">
+<script src="/base/static/resources/js/plugins/codemirror/codemirror.js"></script>
+<script src="/base/static/resources/js/plugins/codemirror/mode/javascript/javascript.js"></script>
+<style>
+li {
+	line-height: 24px;
+}
+</style>
+<script type="text/javascript">
+	var basePath = '/base';
+</script>
+</head>
+<body class="gray-bg">
+	<div class="wrapper wrapper-content">
+<div class="ibox float-e-margins">
+	<!-- 示例列表begin -->
+	<div class="col-sm-3">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>级联下拉框ajax调用示例列表</h5>
+			</div>
+			<div class="ibox-content">
+				<ul>
+					<li><a id="areaLinkage" href="javascript:void(0);">省 / 市 / 区</a></li>
+					<li><a id="bankLinkage" href="javascript:void(0);">开户银行 / 银行账号</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 示例列表end -->
+	
+	<!-- 省->市->区联动示例 begin -->
+	<div id="ep_areaLinkage" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>省 / 市 / 区 联动示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">无选中值</label>
+						<div class="col-sm-3">
+							<select id="province_id" name="province_id" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<select id="city_id" name="city_id" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<select id="district_id" name="district_id" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label">有选中值</label>
+						<div class="col-sm-3">
+							<select id="province_id2" name="province_id2" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<select id="city_id2" name="city_id2" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<select id="district_id2" name="district_id2" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+					</div>
+					
+					
+				</form>
+				<script type="text/javascript">
+				new linkageContainer.areaSelector($("#province_id"), $("#city_id"), $("#district_id"), "", "", "");
+	            new linkageContainer.areaSelector($("#province_id2"), $("#city_id2"), $("#district_id2"), "110000000000", "110100000000", "110102000000");
+				</script>
+
+<h4>示例代码：</h4>				
+<textarea id="area_areaLinkage">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">无选中值</label>
+		<div class="col-sm-3">
+			<select id="province_id" name="province_id" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<select id="city_id" name="city_id" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<select id="district_id" name="district_id" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">有选中值</label>
+		<div class="col-sm-3">
+			<select id="province_id2" name="province_id2" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<select id="city_id2" name="city_id2" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<select id="district_id2" name="district_id2" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/chosen/chosen.jquery.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/linkage.js"></script>
+	<script type="text/javascript">
+		// 无选中值的省 / 市
+		new linkageContainer.areaSelector($("#province_id"), $("#city_id"), $("#district_id"), "", "", "");
+		// 有选中值的省 / 市
+           new linkageContainer.areaSelector($("#province_id2"), $("#city_id2"), $("#district_id2"), "110000000000", "110100000000", "110102000000");
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- 省 / 市 / 区联动示例 end -->
+	
+	
+	
+	<!-- 开户银行-银行账号联动示例 begin -->
+	<div id="ep_bankLinkage" class="col-sm-9">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<h5>开户银行 / 银行账号 联动示例代码</h5>
+			</div>
+			
+			<div class="ibox-content">
+				<form method="get" class="form-horizontal">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">无选中值</label>
+						<div class="col-sm-3">
+							<select id="bank_id" name="bank_id" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<select id="bank_account_id" name="bank_account_id" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-2 control-label">有选中值</label>
+						<div class="col-sm-3">
+							<select id="bank_id2" name="bank_id2" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+						<div class="col-sm-3">
+							<select id="bank_account_id2" name="bank_account_id2" class="form-control m-b" data-placeholder="请选择">
+							</select>
+						</div>
+					</div>
+				</form>
+				<script type="text/javascript">
+				new linkageContainer.bankSelector($("#bank_id"), $("#bank_account_id"), "", "");
+	            new linkageContainer.bankSelector($("#bank_id2"), $("#bank_account_id2"), "998", "527");
+				</script>
+
+<h4>示例代码：</h4>					
+<textarea id="area_bankLinkage">
+	<!-- 引入CSS -->
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/plugins/chosen/chosen.css">
+	<link rel="stylesheet" type="text/css" href="$basePath/resources/css/style.css?v=4.1.0">
+	
+	<!-- 此DIV域必须包含在FORM表单中 -->
+	<div class="form-group">
+		<label class="col-sm-2 control-label">无选中值</label>
+		<div class="col-sm-3">
+			<select id="bank_id" name="bank_id" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<select id="bank_account_id" name="bank_account_id" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">有选中值</label>
+		<div class="col-sm-3">
+			<select id="bank_id2" name="bank_id2" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+		<div class="col-sm-3">
+			<select id="bank_account_id2" name="bank_account_id2" class="form-control m-b" data-placeholder="请选择">
+			</select>
+		</div>
+	</div>
+	
+	<!-- 引入自定义JS -->
+	<script type="text/javascript" src="$basePath/resources/js/plugins/chosen/chosen.jquery.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/utils.js"></script>
+	<script type="text/javascript" src="$link.contextPath/resources/js/linkage.js"></script>
+	<script type="text/javascript">
+		// 无选中值的
+		new linkageContainer.bankSelector($("#bank_id"), $("#bank_account_id"), "", "");
+		// 有选中值的
+	    new linkageContainer.bankSelector($("#bank_id2"), $("#bank_account_id2"), "998", "527");
+	</script>
+</textarea>
+			</div>
+		</div>
+	</div>
+	<!-- 开户银行 / 银行账号联动示例 end -->
+	
+</div>
+
+<!-- CodeMirror -->
+<script type="text/javascript">
+	$(document).ready(
+		function() {
+			editor1 = CodeMirror.fromTextArea(document.getElementById("area_areaLinkage"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			editor2 = CodeMirror.fromTextArea(document.getElementById("area_bankLinkage"), {
+				lineNumbers : true,
+				matchBrackets : true,
+				styleActiveLine : true,
+				readOnly : true
+			});
+			
+			$("#areaLinkage").click();
+		});
+	
+	$("#areaLinkage").click(function(){
+		$("#ep_areaLinkage").show();
+		$("#ep_bankLinkage").hide();
+	});
+	
+	$("#bankLinkage").click(function(){
+		$("#ep_bankLinkage").show();
+		$("#ep_areaLinkage").hide();
+	});
+</script>
+</div>
+</body>
+</html>

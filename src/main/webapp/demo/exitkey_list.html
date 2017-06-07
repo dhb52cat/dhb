@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="renderer" content="webkit">
+<title>我爱我家CBS</title>
+<meta name="keywords" content="5i5j,cbs">
+<meta name="description" content="我爱我家核心业务系统">
+<!--[if lt IE 9]>
+<meta http-equiv="refresh" content="0;ie.html" />
+<![endif]-->
+<!-- css -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link href="/base/static/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="/base/static/resources/css/plugins/chosen/chosen.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/plugins/treeview/bootstrap-treeview.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/animate.css">
+<link rel="stylesheet" type="text/css" href="/base/static/resources/css/style.css?v=4.1.0">
+<!-- 全局js -->
+
+<script src="/base/static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script src="/base/static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+</head>
+<body class="gray-bg">
+<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/base/static/resources/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/base/static/resources/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="/base/static/resources/js/plugins/layer2.1/laydate/laydate.js"></script>
+<script src="/base/static/resources/js/plugins/layer/layer.js"></script>
+<script src="/base/static/resources/js/plugins/chosen/chosen.jquery.js"></script>
+<script src="/base/static/resources/js/table-export.js"></script>
+<script src="/base/static/resources/js/tableExport.js"></script>
+<!-- 公共js -->
+<script src="/base/static/resources/js/utils.js"></script>
+<script src="/base/static/resources/js/content.js"></script>
+<style>
+#export .table-bgcolor{ margin-bottom:0 !important;}
+#export .table-bgcolor tr td{ border-right:1px solid #CBD5DD;}
+#export .table-bgcolor tr td { font-size:12px; font-weight:bold;}
+#export .table-bgcolor tr td.bgcolor{ background:#e5e7ec;}
+</style>
+	<div class="wrapper wrapper-content">
+		<div class="ibox float-e-margins" style="margin-bottom: 5px;">
+		    <div class="ibox-title">
+		        <h5>退钥匙记录</h5>
+		        <div class="ibox-tools">
+		            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+		        </div>
+		    </div>
+		    <div class="ibox-content">
+				<div class="row">
+			        <div class="col-md-12 space20">
+			            <div class="btn-group pull-left">
+			                <button data-toggle="dropdown" class="btn btn-green dropdown-toggle export-excel" data-table="#export">
+			                    Export <i class="fa fa-angle-down"></i>
+			                </button>
+			            </div>
+			        </div>
+			    </div>
+			    <div id="export">
+			    	<div style="border:1px solid #CBD5DD; border-top:none;">
+					    <table class="table table-border table-striped table-bgcolor" data-query-params="queryParams"
+												data-mobile-responsive="true" data-pagination="true"
+												data-icon-size="outline" data-striped="true" data-search="false">
+							<tr>
+								<td class="bgcolor"><span>房源编号</span></td>
+								<td>11313099</td>
+								<td class="bgcolor"><span>收钥匙人</span></td>
+								<td>tom42</td>
+								<td class="bgcolor"><span>所属店</span></td>
+								<td style="border-right:none;">南新仓管理中心</td>
+							</tr>
+							<tr>
+								<td class="bgcolor"><span>物业地址</span></td>
+								<td>幸福嗨A1单元12201</td>
+								<td class="bgcolor"><span>收钥匙日期</span></td>
+								<td>2017-01-06 13:27</td>
+								<td class="bgcolor"><span>钥匙编号</span></td>
+								<td style="border-right:none;">5554566</td>
+							</tr>
+							<tr>
+								<td class="bgcolor">存放店电话</td>
+								<td>82256661、84410000</td>
+								<td class="bgcolor">房源状态</td>
+								<td>无效 </td>
+								<td class="bgcolor">房源类型</td>
+								<td style="border-right:none;">租赁</td>
+							</tr>
+							<tr>
+								<td class="bgcolor">钥匙数量</td>
+								<td>1套(每套1把) </td>
+								<td class="bgcolor">门禁卡</td>
+								<td>1 </td>
+								<td class="bgcolor"></td>
+								<td style="border-right:none;"></td>
+							</tr>
+							<tr>
+								<td colspan="6" align="center">钥匙追踪记录</td>
+							</tr>
+						</table>
+					</div>
+					<!-- Example Pagination -->
+					<div class="example-wrap ptb10">
+						<table id="dataTable_pop" class="table table-hover  table-striped" data-query-params="queryParams"
+										data-mobile-responsive="true" data-pagination="true"
+										data-icon-size="outline" data-striped="true" data-search="false">
+							<thead>
+								<tr>
+									<th data-field="date">日期</th>
+									<th data-field="pname">录入人</th>
+									<th data-field="opttext">收钥操作</th>
+									<th data-field="jname">借钥匙人</th>
+									<th data-field="phone">借钥匙人电话</th>
+									<th data-field="time">借用时间<br>预计还钥匙时间</th>
+									<th data-field="waring">备注</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+					<!-- End Example Pagination -->
+			    </div>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript">
+	$(function() {
+		$("select").chosen({
+			width : "100%"
+		});
+		var dataTable_pop = [{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		},{
+			"date" : "2017-01-13 10:00",
+			"pname" : "tom4",
+			"opttext" : "收钥匙退回",
+			"jname" : "--",
+			"phone" : "--",
+			"time" : "--<br/>--",
+			"waring" : "退回成功！",
+			"column2" : "c5",
+			"column3" : "c10",
+			"column4" : "c15"
+			
+		}
+		];
+		//初始化表格
+		//详细使用说明参见http://bootstrap-table.wenzhixin.net.cn/zh-cn/documentation/
+		$('#dataTable_pop').bootstrapTable({
+			data : dataTable_pop,
+			pageSize: 20,
+			pageList: [20, 30, 50]
+		});
+	});
+	jQuery(document).ready(function () {
+        TableExport.init();
+    });
+</script>
+</body>
+</html>

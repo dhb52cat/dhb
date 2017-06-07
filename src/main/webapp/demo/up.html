@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" 
+     href="http://tarruda.github.com/bootstrap-datetimepicker/assets/css/bootstrap-datetimepicker.min.css">
+		
+		
+		
+		
+	<link rel="stylesheet" href="../static/resources/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="../static/resources/dist/css/bootstrap-theme.min.css" />
+	</head>
+	<link rel="stylesheet" type="text/css" href="../static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="../static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link href="../static/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="../static/resources/css/plugins/chosen/chosen.css" rel="stylesheet">
+<link rel="../stylesheet" type="text/css" href="static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="../stylesheet" type="text/css" href="static/resources/css/style.css?v=5.1.1">
+
+
+
+<link rel="stylesheet" type="text/css" href="../static/resources/css/bootstrap.min.css?v=3.3.6">
+<link rel="stylesheet" type="text/css" href="../static/resources/css/plugins/bootstrap-table/bootstrap-table.min.css">
+<link href="../static/resources/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+<link href="../static/resources/css/plugins/chosen/chosen.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../static/resources/css/plugins/treeview/bootstrap-treeview.css">
+<link rel="stylesheet" type="text/css" href="../static/resources/css/font-awesome.css?v=4.4.0">
+<link rel="stylesheet" type="text/css" href="../static/resources/css/animate.css">
+<link rel="stylesheet" type="text/css" href="../static/resources/css/style.css?v=4.1.0">
+<!-- 全局js -->
+<script src="../static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script src="../static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="../static/resources/js/plugins/layer2.1/laydate/laydate.js"></script>
+<script src="../static/resources/js/plugins/chosen/chosen.jquery.js"></script>
+<script src="../static/resources/js/plugins/prettyfile/bootstrap-prettyfile.js"></script>
+<!-- 公共js -->
+<script src="../static/resources/js/utils.js"></script>
+<script src="../static/resources/js/content.js"></script>
+
+<!-- 需要引用的js -->
+<script type="text/javascript" src="../static/resources/js/plugins/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../static/resources/js/plugins/validate/messages_zh.min.js"></script>
+<script type="text/javascript" src="/base/resources/script/container/basic.js"></script>
+
+
+<script src="../static/resources/js/jquery.min.js?v=2.1.4"></script>
+<script src="../static/resources/js/bootstrap.min.js?v=3.3.6"></script>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+<div class="ibox float-e-margins">
+	
+	
+	<div class="line">
+		<span class="small-title">店面钥匙管理</span>
+	</div>
+
+
+	<div class="section">
+		<div class="row">
+			<div class="tabs-container" id="tabs-container">
+				<div calss="vertical-tab-container">
+					<ul class="nav nav-tabs vertical-tab" id="abroad-tabs">
+						<li class=""><a data-toggle="tab" href="#tab-1">
+								待处理<span style="color: red;display:block;clear: both;margin-top: 5px;margin-left: -2px;">(66)</span></a></li>
+						<li class=""><a data-toggle="tab" href="#tab-2"> 钥匙在管</a></li>
+						<li class=""><a data-toggle="tab" href="#tab-3"> 退钥匙记录</a></li>
+						<li class="active"><a data-toggle="tab" href="#tab-1"> 日盘点管理</a></li>
+					</ul>
+				</div>
+				<div class="tab-content" id="tab-content">
+					<div id="tab-1" class="tab-pane active">
+						<div class="tabs-container">
+						
+							<div class="tab-content" id="tab-content1">
+								<div id="tab-11" class="tab-pane active">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-sm-12">
+												<div class="ibox ibox-lan float-e-margins" id="tab-111">
+
+													<div class="ibox-content">
+														<div class="row" >
+															<div class="col-sm-8" style="height: 90px;">
+																<dl class="dl-horizontal" style="font-size: 14px;">
+																	<dt style="margin-top: 5px;">盘点日期：</dt>
+																	<dd>		
+																        <div class="row">
+															
+																			<div class="col-md-5">
+																				<div class="form-group"style="float: left;width: 80%;">
+																					<div class="col-md-5"style="float: left;width:60%;margin-top: -5px;">
+																						<input id="startTime" name="startTime" class="form-control" placeholder="开始日期" onclick="laydate({istime: false, format: 'YYYY-MM-DD'})"/>
+																					</div>
+																					<div style="float:left; float: left;margin-top: -25px;margin-left:60%;width: 20%;">至</div>
+																					<div class="col-md-5" style="float: left;width: 60%;margin-top: -30px;margin-left:65%;">
+																						<input id="endTime" name="endTime" class="form-control" placeholder="结束时间" onclick="laydate({istime: false, format: 'YYYY-MM-DD'})"  />
+																					</div>
+																				</div>
+																			</div>
+					
+																		</div>
+																		<!--<div id="datetimepicker" class="input-append date" >
+																			      <input type="text" style="width: 100px;float: left;"/>
+																			      <span class="add-on"  style="float: left;">
+																			        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+																			      </span>
+																		</div>
+																		<span style="display: block;float: left;width: 5%;text-align: center;font-size: 14px;">-</span>	
+																		<div id="datetimepicker" class="input-append date" >
+																			     <input type="text" style="width: 100px;float: left; margin-top: -5px;"/>
+																			      <span class="add-on" style="float: left; margin-top: -5px;">
+																			        <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+																			      </span>
+																		</div>-->
+																	</dd>
+																	<button type="button" style="display:block;width: 10%;float: left;height: 30px;margin-top: -25px;margin-left:65%;">查询</button>
+																	<button type="button" style="display:block;width: 10%;float: left;height: 30px;margin-top: -30px;margin-left:85%;">重置</button>
+																</dl>
+																
+																	
+																
+															</div>
+															<div class="col-sm-4">
+																<dl class="dl-horizontal">
+																	<dt>盘点状态：</dt>
+																	<dd>
+																		<div class="form-group">
+							
+							<div class="col-sm-8">
+								<select id="userstatus" name="userstatus" class="form-control" data-placeholder="所有状态" style="margin-top: -10px;width: 40%;">
+									<option value="">全部</option>
+									<option value="1">手工盘点</option>
+									<option value="2">自动盘点</option>
+								</select>
+							</div>
+						</div>
+																	</dd>
+																
+																</dl>
+															</div>
+														
+														</div>
+														
+														
+														
+														
+													</div>
+												</div>
+			
+
+												<div class="ibox ibox-lan float-e-margins">
+													<h4 style="display:block;height:40px;">
+														<span style="display:block;line-height:35px;float: left;width:15%;">
+															共<span>&nbsp;1&nbsp;</span>&nbsp;页&nbsp;<span>&nbsp;1&nbsp;</span>&nbsp;条记录&nbsp;<span>&nbsp;1&nbsp;</span>&nbsp;页
+														 </span>
+														<button type="button" style="float: right;border:none;width:7%;height:30px;border-radius: 2px;color: #333333;">当日盘点</button>
+													</h4>
+													<div class="ibox-content">
+														
+														<div class="row">
+															<div class="example-wrap ptb10">
+																<table id="dataTable" data-query-params="queryParams" data-mobile-responsive="true" 
+																data-pagination="true" data-icon-size="outline" data-striped="true" data-search="false" 
+																class="table table-hover table-striped" style="width:90%; margin:0 auto;">
+																	<tr style="height: 50px;">
+																		<th data-field="id">
+																			<p style="line-height: 18px;margin-top: 10px;">盘点时间</p>
+																			<p style="line-height: 18px;">盘点状态</p>
+																		</th>
+																		<th data-field="name">盘点人</th>
+																		<th data-field="price">在管钥匙数量</th>
+																		<th data-field="opt">实际在店数量</th>
+																		<th data-field="id">实际未还数量</th>
+																		<th data-field="name">待转店确认数量</th>
+																		<th data-field="price">备注</th>
+																		<th data-field="opt">操作</th>
+																	</tr>
+																	
+																	<tbody>
+																		<tr data-index="0" tyle="height: 50px;">
+																			<td>
+																			<p style="line-height: 18px;margin-top: 10px;">2017-1-12&nbsp;12:00</p>
+																			<p style="line-height: 18px;">盘点状态</p>
+																			</td>
+																			<td></td>
+																			<td>88</td>
+																			<td>79</td>
+																			<td>4</td>
+																			<td>5</td>
+																			<td>
+																				<textarea style="overflow:hidden">
+																					
+																				</textarea>
+																			</td>
+																			<td>
+																				<a href="pandian.html">查看</a>
+																			</td>
+																		</tr>
+																		<tr data-index="0" tyle="height: 50px;">
+																			<td>
+																			<p style="line-height: 18px;margin-top: 10px;">2017-1-12&nbsp;12:00</p>
+																			<p style="line-height: 18px;">盘点状态</p>
+																			</td>
+																			<td></td>
+																			<td>88</td>
+																			<td>79</td>
+																			<td>4</td>
+																			<td>5</td>
+																			<td>
+																				<textarea style="overflow:hidden">
+																					
+																				</textarea>
+																			</td>
+																			<td>
+																				<a href="pandian.html" >查看</a>
+																			</td>
+																		</tr>
+																	</tbody>	
+																</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									
+										<!-- <div class="row">
+											<div class="form-group">
+												<div class="col-sm-offset-5">
+													<button class="btn btn-success" type="submit">提交公司审批</button>
+													<button class="btn btn-success" type="submit">公司退回</button>
+													<button class="btn btn-white" type="submit">提交至银行</button>
+												</div>
+											</div>
+										</div> -->
+									</div>
+								</div>
+								<div id="tab-12" class="tab-pane"></div>
+								<div id="tab-13" class="tab-pane"></div>
+								<div id="tab-14" class="tab-pane"></div>
+								<div id="tab-15" class="tab-pane"></div>
+							</div>
+						</div>
+					</div>
+					<div id="tab-2" class="tab-pane"></div>
+					<div id="tab-3" class="tab-pane"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- js插件 -->
+	<script
+		src="../static/resources/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+	<script
+		src="../static/resources/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+	<script
+		src="../static/resources/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+	<!-- 公共js -->
+	<script src="../static/resources/js/utils.js"></script>
+	<script src="../static/resources/js/content.js"></script>
+</div>
+</div>
+</body>
+
+ <script type="text/javascript"
+     src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js">
+    </script> 
+    <script type="text/javascript"
+     src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript"
+     src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+    </script>
+    <script type="text/javascript">
+      $('#datetimepicker').datetimepicker({
+        format: 'MM/dd/yyyy hh:mm',
+        language: 'en',
+        pickDate: true,
+        pickTime: true,
+        hourStep: 1,
+        minuteStep: 15,
+        secondStep: 30,
+        inputMask: true
+      });
+    </script>
+
+	<script src="../static/resources/dist/js/jquery-1.9.1.js"></script>
+	<script src="../static/resources/dist/js/bootstrap.min.js"></script>
+</html>
